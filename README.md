@@ -32,4 +32,24 @@ Organise the code into functions:
   - Validate if the guess is a single character and is an alphabet
   - Check if the letter is in the randomly chosen word
 - ```ask_for_input()``` 
-  - request user to input a character as a guess
+  - request user to input a character as a guess  
+
+## Milestone 4: Create the game class  
+
+Use the Object Oriented Programming (OOP) paradigm to develop the Hangman game
+
+- Create the class to hold the following information
+  - ```word```: str - the word to be guessed, picked randomly from the word_list
+  - ```word_guessed```: list - initialised with '_' for each letter not yet guessed
+  - ```num_letters```: int - the number of UNIQUE letters in the word that have not been guessed yet
+  - ```num_lives```: int - the number of lives the player has at the start of the game
+  - ```word_list```: list - a list of words
+  - ```list_of_guesses```: list - a list of the guesses that have been tried  
+  
+- Define methods  
+  - ```check_guess()```
+    - Check if the guessed letter is found in the randomly chosen word
+    - Update the remaining lives based on the above check
+  - ```ask_for_input()```
+    - To request for guesses
+    - Validate the user input for length and type of character

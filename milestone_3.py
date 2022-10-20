@@ -1,13 +1,19 @@
-# Step 1. Create a while loop and set the condition to True. 
-# Setting the condition to True ensures that the code run continuously. 
+import random
+
+word_list = ["apple", "mango", "pear", "blueberry", "strawberry"]
+print("List of words:", word_list)
+
+word = random.choice(word_list)
+print("Random word: ", word)
+
 while True:
-    # Step 2: Ask the user to guess a letter and assign this to a variable called guess.
     guess = input("Guess a letter: ")
     
-    # Step 3. Check that the guess is a single, alphabetical character.
     if len(guess) == 1 and guess.isalpha():
-        # Step 4. If the guess passes the checks, break out of the loop.
-        break
+        if guess in word:
+            print(f"Good guess! {guess}")
+        else:
+            print(f"Sorry, {guess} is not in the word. Try again.")
     else:
-        # Step 5: If the guess does not pass the checks, then print a message
+        # If the guess does not pass the checks, then print a message
         print("Invalid letter. Please, enter a single alphabetical character.")

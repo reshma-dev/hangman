@@ -20,4 +20,16 @@ This milestone makes use of basic Python data types like lists and constructs li
 Also makes use of a module ```random``` to pick a random word from our ```word_list```
 - Define the list of possible words - ```word_list```
 - Choose a random word from the list - ```word```
-- Ask user for an input character and validate that a single alphabet character is entered - ```guess```
+- Ask user for an input character and validate that a single alphabet character is entered - ```guess```  
+
+## Milestone 3: Check if the guessed character is in the word  
+
+This milestone introduces checks to determine whether the guessed letter is in the randomly chosen word or not  
+
+Organise the code into functions: 
+- ```check_guess(guess)``` 
+  - In order to be able to match both capital and lowercase guesses, convert guess to lowercase
+  - Validate if the guess is a single character and is an alphabet
+  - Check if the letter is in the randomly chosen word
+- ```ask_for_input()``` 
+  - request user to input a character as a guess

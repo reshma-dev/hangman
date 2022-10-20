@@ -52,4 +52,11 @@ Use the Object Oriented Programming (OOP) paradigm to develop the Hangman game
     - Update the remaining lives based on the above check
   - ```ask_for_input()```
     - To request for guesses
-    - Validate the user input for length and type of character
+    - Validate the user input for length and type of character  
+
+## Milestone 5: Putting it all together  
+This finally puts it all together. Write a function to code the game logic using the ```Hangman``` class  
+
+Logic: Keep requesting guesses one character at a time, until the game is over. The game ends when either:
+- **Game lost** - there aren't any more lives left - ```num_lives == 0```
+- **Game won** - the user gueeses the word correctly to win the game!

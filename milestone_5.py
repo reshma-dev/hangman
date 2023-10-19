@@ -31,9 +31,6 @@ class Hangman:
         The number of lives the player has
     __list_of_guesses: list
         A list of the guesses that have already been tried
-    __word_list: list
-        List of words used to pick a random word for guessing
-
 
     Methods:
     -------
@@ -49,7 +46,6 @@ class Hangman:
     """
 
     def __init__(self, word_list, num_lives=5) -> None:
-        self.__word_list = word_list
         self.__num_lives = num_lives
 
         self.__word = random.choice(word_list).lower()

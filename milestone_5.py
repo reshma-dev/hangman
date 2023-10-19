@@ -6,17 +6,17 @@ import random
 class Hangman:
     def __init__(self, word_list, num_lives=5) -> None:
         self.__word_list = word_list
-        self.num_lives = num_lives
+        self.__num_lives = num_lives
 
         self.__word = random.choice(word_list).lower()
         self.__word_guessed = list("_" * len(self.__word))
 
-        self.num_letters_not_guessed = len(
+        self.__num_letters_not_guessed = len(
             set(self.__word) - set(str(self.__word_guessed))
         )
         self.__list_of_guesses = []
 
-    def ask_for_input(self):
+    def __ask_for_input(self):
         while True:
             letter = input("Enter a single letter: ").strip()
             if not len(letter) == 1 or not letter.isalpha():
@@ -38,25 +38,23 @@ class Hangman:
                     self.__word_guessed[i] = letter
             print(self.__word_guessed)
         else:
-            self.num_lives -= 1
-            print(f"Sorry, {letter} is not in the word")
-            print(f"You have {self.num_lives} lives left")
+            self.__num_lives -= 1
+            print(f"Sorry, '{letter}' is not in the word")
+            print(f"You have {self.__num_lives} lives left")
 
-
-def play_game(word_list):
-    num_lives = 5
-    game = Hangman(word_list, num_lives)
-    while True:
-        if game.num_lives == 0:
-            print("You lost!")
-            break
-        elif game.num_letters_not_guessed > 0:
-            game.ask_for_input()
-        else:
-            print("Congratulations! You won the game")
-            break
+    def play_game(self):
+        while True:
+            if self.__num_lives == 0:
+                print("You lost!")
+                break
+            elif self.__num_letters_not_guessed > 0:
+                self.__ask_for_input()
+            else:
+                print("Congratulations! You won the game")
+                break
 
 
 if __name__ == "__main__":
     word_list = ["apple", "mango", "cherry", "blueberry", "strawberry"]
-    play_game(word_list)
+    game = Hangman(word_list, 5)
+    game.play_game()

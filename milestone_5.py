@@ -45,7 +45,7 @@ class Hangman:
 
     """
 
-    def __init__(self, word_list, num_lives=5) -> None:
+    def __init__(self, word_list=["apple", "mango", "cherry"], num_lives=5) -> None:
         self.__num_lives = num_lives
 
         self.__word = random.choice(word_list).lower()
@@ -127,6 +127,16 @@ class Hangman:
 
 
 if __name__ == "__main__":
-    word_list = ["apple", "mango", "cherry", "blueberry", "strawberry"]
-    game = Hangman(word_list, 5)
+    word_list = [
+        "apple",
+        "mango",
+        "cherry",
+        "blueberry",
+        "strawberry",
+        "blackberry",
+        "pear",
+        "satsuma",
+    ]
+    # game = Hangman(word_list, 5)
+    game = Hangman()
     game.play_game()

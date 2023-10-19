@@ -15,6 +15,7 @@ class Hangman:
     ----------
     word_list: list
         List of words from which a word is randomly chosen by the program
+        Optional argument, defaults to ["apple", "mango", "cherry"] if not specified
     num_lives: int
         Number of lives the player has at the start of the game.
         Optional argument, defaults to 5 if not specified

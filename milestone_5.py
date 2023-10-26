@@ -66,7 +66,7 @@ class Hangman:
         If a new guess is entered, call check_guess and add letter to guessed list
         """
         while True:
-            letter = input("Enter a single letter: ").strip()
+            letter = input("Enter a single letter: ").strip().lower()
             if not len(letter) == 1 or not letter.isalpha():
                 print("Invalid letter. Please, enter a single alphabetical character.")
             elif letter in self.__list_of_guesses:
@@ -88,8 +88,6 @@ class Hangman:
             The letter to be checked as a guess
 
         """
-        letter = letter.lower()
-
         if self.__word.find(letter) >= 0:
             print(f"Good guess! '{letter}' is in the word.")
             for i, character in enumerate(self.__word):
@@ -138,6 +136,5 @@ if __name__ == "__main__":
         "pear",
         "satsuma",
     ]
-    # game = Hangman(word_list, 5)
-    game = Hangman()
+    game = Hangman(word_list, 5)
     game.play_game()
